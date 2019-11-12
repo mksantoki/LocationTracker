@@ -1,0 +1,12 @@
+com.mk.locationtracker
+com.mk.locationtracker.adapter
+com.mk.locationtracker.adapter.viewholder
+com.mk.locationtracker.location
+com.mk.locationtracker.model
+com.mk.locationtracker.notificationutils
+com.mk.locationtracker.ui.base
+com.mk.locationtracker.ui.main.home
+com.mk.locationtracker.ui.main.home.tabone
+com.mk.locationtracker.ui.main.home.tabthree
+com.mk.locationtracker.ui.main.home.tabtwo
+com.mk.locationtracker.utiles
