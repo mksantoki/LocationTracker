@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Location Tracker</string>
+    <string name="channel_name">Location</string>
+    <string name="channel_description" >sdasad</string>
+    <string name="default_channel">Default channel</string>
+    <string name="date">Date</string>
+    <string name="address">Address</string>
+    <string name="user_address">User Current Address</string>
+    <string name="user_distance">User distance</string>
+    <string name="user_start_location">User start location</string>
+    <string name="user_last_update_location">User Last update Location</string>
 </resources>

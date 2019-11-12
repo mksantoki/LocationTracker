@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -38,4 +40,6 @@ abstract public class BaseFragment extends Fragment {
     protected abstract void initView(View view);
 
     protected abstract void initControl();
+
+
 }
