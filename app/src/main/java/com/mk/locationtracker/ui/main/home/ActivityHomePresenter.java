@@ -1,8 +1,17 @@
 package com.mk.locationtracker.ui.main.home;
 
+/**
+ * The interface Activity home presenter.
+ */
 public interface ActivityHomePresenter {
 
+    /**
+     * Request for location.
+     */
     void requestForLocation();
 
-    double distance(double lat1, double lon1, double lat2, double lon2);
+    /**
+     * Stop location update.
+     */
+    void stopLocationUpdate();
 }

@@ -33,7 +33,7 @@ import java.util.List;
 import androidx.core.app.NotificationCompat;
 
 /**
- * Created by Ravi on 31/03/15.
+ * The type Notification utils.
  */
 public class NotificationUtils {
 
@@ -41,14 +41,36 @@ public class NotificationUtils {
 
     private Context mContext;
 
+    /**
+     * Instantiates a new Notification utils.
+     *
+     * @param mContext the m context
+     */
     public NotificationUtils(Context mContext) {
         this.mContext = mContext;
     }
 
+    /**
+     * Show notification message.
+     *
+     * @param title     the title
+     * @param message   the message
+     * @param timeStamp the time stamp
+     * @param intent    the intent
+     */
     public void showNotificationMessage(String title, String message, String timeStamp, Intent intent) {
         showNotificationMessage(title, message, timeStamp, intent, null);
     }
 
+    /**
+     * Show notification message.
+     *
+     * @param title     the title
+     * @param message   the message
+     * @param timeStamp the time stamp
+     * @param intent    the intent
+     * @param imageUrl  the image url
+     */
     public void showNotificationMessage(final String title, final String message, final String timeStamp, Intent intent, String imageUrl) {
         // Check for empty push message
         if (TextUtils.isEmpty(message))
@@ -94,8 +116,8 @@ public class NotificationUtils {
 
     private void showSmallNotification(NotificationCompat.Builder mBuilder, int icon, String title, String message, String timeStamp, PendingIntent resultPendingIntent, Uri alarmSound) {
         try {
-            NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
-            inboxStyle.addLine(message);
+            NotificationCompat.BigTextStyle inboxStyle = new NotificationCompat.BigTextStyle();
+            inboxStyle.bigText(message);
             Notification notification;
             notification = mBuilder.setSmallIcon(icon).setTicker(title)
                     .setAutoCancel(true)
@@ -163,6 +185,9 @@ public class NotificationUtils {
     /**
      * Downloading push notification image before displaying it in
      * the notification tray
+     *
+     * @param strURL the str url
+     * @return the bitmap from url
      */
     public Bitmap getBitmapFromURL(String strURL) {
         try {
@@ -179,7 +204,10 @@ public class NotificationUtils {
         }
     }
 
-    // Playing notification sound
+    /**
+     * Play notification sound.
+     */
+// Playing notification sound
     public void playNotificationSound() {
         try {
             Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
@@ -193,6 +221,9 @@ public class NotificationUtils {
 
     /**
      * Method checks if the app is in background or not
+     *
+     * @param context the context
+     * @return the boolean
      */
     public static boolean isAppIsInBackground(Context context) {
         boolean isInBackground = true;
@@ -219,12 +250,23 @@ public class NotificationUtils {
         return isInBackground;
     }
 
-    // Clears notification tray messages
+    /**
+     * Clear notifications.
+     *
+     * @param context the context
+     */
+// Clears notification tray messages
     public static void clearNotifications(Context context) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancelAll();
     }
 
+    /**
+     * Gets time milli sec.
+     *
+     * @param timeStamp the time stamp
+     * @return the time milli sec
+     */
     public static long getTimeMilliSec(String timeStamp) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {

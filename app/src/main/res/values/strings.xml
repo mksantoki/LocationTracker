@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Location Tracker</string>
     <string name="channel_name">Location</string>
-    <string name="channel_description" >sdasad</string>
+    <string name="channel_description" >Default channel</string>
     <string name="default_channel">Default channel</string>
     <string name="date">Date</string>
     <string name="address">Address</string>
@@ -9,4 +9,8 @@
     <string name="user_distance">User distance</string>
     <string name="user_start_location">User start location</string>
     <string name="user_last_update_location">User Last update Location</string>
+    <string name="sorry_for_delay_we_are_try_to_find_your_location">Sorry for delay. We are try to find your location</string>
+    <string name="please_wait_we_are_try_to_find_your_address">Please wait we are try to find your address</string>
+    <string name="mtrs">%1$s mtrs</string>
+    <string name="mtrs_completed">50 mtrs completed</string>
 </resources>

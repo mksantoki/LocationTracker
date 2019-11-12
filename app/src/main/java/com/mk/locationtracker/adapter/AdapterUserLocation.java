@@ -3,68 +3,56 @@ package com.mk.locationtracker.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.mk.locationtracker.R;
-import com.mk.locationtracker.ui.main.home.ActivityHomePresenterImp;
+import com.mk.locationtracker.adapter.viewholder.ViewHolderUserLocation;
+import com.mk.locationtracker.model.UserLocationPoint;
 
 import java.util.ArrayList;
 
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class AdapterUserLocation extends RecyclerView.Adapter<AdapterUserLocation.MyViewHolder> {
+/**
+ * The type Adapter user location.
+ */
+public class AdapterUserLocation extends RecyclerView.Adapter<ViewHolderUserLocation> {
 
-    private ArrayList<ActivityHomePresenterImp.UserLocationPoint> miterPoints;
+    private ArrayList<UserLocationPoint> miterPoints;
 
-    public void notifyDataList(ArrayList<ActivityHomePresenterImp.UserLocationPoint> miterPoints) {
+    /**
+     * Notify data list.
+     *
+     * @param miterPoints the miter points
+     */
+    public void notifyDataList(ArrayList<UserLocationPoint> miterPoints) {
         this.miterPoints = miterPoints;
         notifyDataSetChanged();
     }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
-        @BindView(R.id.tvDate)
-        TextView tvDate;
-        @BindView(R.id.tvAddress)
-        TextView tvAddress;
-
-        public MyViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
-        }
-    }
-
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public AdapterUserLocation(ArrayList<ActivityHomePresenterImp.UserLocationPoint> miterPoints) {
+    /**
+     * Instantiates a new Adapter user location.
+     *
+     * @param miterPoints the miter points
+     */
+    public AdapterUserLocation(ArrayList<UserLocationPoint> miterPoints) {
         this.miterPoints = miterPoints;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                           int viewType) {
-        // create a new view
+    public ViewHolderUserLocation onCreateViewHolder(ViewGroup parent,
+                                                     int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_tab_three, parent, false);
-        MyViewHolder myViewHolder = new MyViewHolder(v);
+        ViewHolderUserLocation myViewHolder = new ViewHolderUserLocation(v);
         return myViewHolder;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
+    public void onBindViewHolder(ViewHolderUserLocation holder, int position) {
         holder.tvAddress.setText(miterPoints.get(position).getAddress().replace("\n",""));
         holder.tvDate.setText(miterPoints.get(position).getDateTime());
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return miterPoints.size();

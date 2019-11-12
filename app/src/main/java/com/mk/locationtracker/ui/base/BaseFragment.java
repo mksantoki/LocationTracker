@@ -13,7 +13,13 @@ import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * The type Base fragment.
+ */
 abstract public class BaseFragment extends Fragment {
+    /**
+     * The Unbinder.
+     */
     Unbinder unbinder;
 
     @Nullable
@@ -25,6 +31,11 @@ abstract public class BaseFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Sets layout.
+     *
+     * @return the layout
+     */
     protected abstract int setLayout();
 
     @Override
@@ -35,10 +46,21 @@ abstract public class BaseFragment extends Fragment {
         initListener();
     }
 
+    /**
+     * Init listener.
+     */
     protected abstract void initListener();
 
+    /**
+     * Init view.
+     *
+     * @param view the view
+     */
     protected abstract void initView(View view);
 
+    /**
+     * Init control.
+     */
     protected abstract void initControl();
 
 

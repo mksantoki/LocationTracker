@@ -4,15 +4,21 @@ import android.view.View;
 
 import com.mk.locationtracker.R;
 import com.mk.locationtracker.adapter.AdapterUserLocation;
+import com.mk.locationtracker.model.UserLocationPoint;
 import com.mk.locationtracker.ui.base.BaseFragment;
-import com.mk.locationtracker.ui.main.home.ActivityHomePresenterImp;
 
 import java.util.ArrayList;
 
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
+/**
+ * The type Fragment three.
+ */
 public class FragmentThree extends BaseFragment {
+    /**
+     * The Recyclerview.
+     */
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
     private AdapterUserLocation adapterUserLocation;
@@ -38,7 +44,12 @@ public class FragmentThree extends BaseFragment {
 
     }
 
-    public void updateUserLocationList(ArrayList<ActivityHomePresenterImp.UserLocationPoint> miterPoints) {
+    /**
+     * Update user location list.
+     *
+     * @param miterPoints the miter points
+     */
+    public void updateUserLocationList(ArrayList<UserLocationPoint> miterPoints) {
         adapterUserLocation.notifyDataList(miterPoints);
     }
 

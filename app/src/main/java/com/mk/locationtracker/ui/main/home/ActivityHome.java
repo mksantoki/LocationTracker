@@ -19,6 +19,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.mk.locationtracker.BuildConfig;
 import com.mk.locationtracker.R;
+import com.mk.locationtracker.model.UserLocationPoint;
 import com.mk.locationtracker.notificationutils.NotificationUtils;
 import com.mk.locationtracker.ui.base.BaseActivity;
 import com.mk.locationtracker.ui.main.home.tabone.FragmentOne;
@@ -32,12 +33,22 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 
+/**
+ * The type Activity home.
+ */
 public class ActivityHome extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ActivityHomeView {
+    /**
+     * The Main container.
+     */
     @BindView(R.id.main_container)
     FrameLayout mainContainer;
+    /**
+     * The Navigation.
+     */
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
     private ActivityHomePresenter presenter;
+    private Fragment currentFragment = null;
 
     @Override
     protected void initListener() {
@@ -55,7 +66,8 @@ public class ActivityHome extends BaseActivity implements BottomNavigationView.O
         requestLocationPermission();
     }
 
-    private void requestLocationPermission() {
+    @Override
+    public void requestLocationPermission() {
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                 .withListener(new PermissionListener() {
@@ -85,10 +97,7 @@ public class ActivityHome extends BaseActivity implements BottomNavigationView.O
         return R.layout.activity_home;
     }
 
-    private Fragment currentFragment = null;
-
     private boolean loadFragment(Fragment fragment) {
-        //switching fragment
         if (fragment != null) {
             currentFragment = fragment;
             getSupportFragmentManager()
@@ -135,7 +144,8 @@ public class ActivityHome extends BaseActivity implements BottomNavigationView.O
         startActivity(intent);
     }
 
-    private boolean checkPermissions() {
+    @Override
+    public boolean checkPermissions() {
         int permissionState = ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION);
         return permissionState == PackageManager.PERMISSION_GRANTED;
@@ -143,18 +153,14 @@ public class ActivityHome extends BaseActivity implements BottomNavigationView.O
 
     @Override
     public void onUpdateLocation(String address) {
-        runOnUiThread(() -> Toast.makeText(ActivityHome.this, address, Toast.LENGTH_SHORT).show());
         updateUserLocation(address);
     }
 
-    private void updateUserLocation(String address) {
+    @Override
+    public void updateUserLocation(String address) {
         if (currentFragment instanceof FragmentOne) {
-            FragmentOne temp = (FragmentOne) ((FragmentOne) currentFragment);
+            FragmentOne temp = (FragmentOne) currentFragment;
             temp.updateUserLocation(address);
-        } else if (currentFragment instanceof FragmentTwo) {
-
-        } else if (currentFragment instanceof FragmentThree) {
-
         }
     }
 
@@ -162,12 +168,12 @@ public class ActivityHome extends BaseActivity implements BottomNavigationView.O
     public void showLocationUpdate(String address) {
         Intent resultIntent = new Intent(this, ActivityHome.class);
         resultIntent.putExtra("message", "test");
-        showNotificationMessage(getApplicationContext(), "You reach 50 mtrs", address, "", resultIntent);
+        showNotificationMessage(getApplicationContext(), getString(R.string.mtrs_completed), address, "", resultIntent);
 
     }
 
     @Override
-    public void updateUserLocationList(ArrayList<ActivityHomePresenterImp.UserLocationPoint> miterPoints) {
+    public void updateUserLocationList(ArrayList<UserLocationPoint> miterPoints) {
         if (currentFragment instanceof FragmentThree) {
             FragmentThree temp = (FragmentThree) currentFragment;
             temp.updateUserLocationList(miterPoints);
@@ -185,9 +191,17 @@ public class ActivityHome extends BaseActivity implements BottomNavigationView.O
         }
     }
 
-    private void showNotificationMessage(Context context, String title, String message, String timeStamp, Intent intent) {
+    @Override
+    public void showNotificationMessage(Context context, String title, String message, String timeStamp, Intent intent) {
         NotificationUtils notificationUtils = new NotificationUtils(context);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         notificationUtils.showNotificationMessage(title, message, timeStamp, intent);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.stopLocationUpdate();
     }
 }

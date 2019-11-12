@@ -1,33 +1,33 @@
 package com.mk.locationtracker.ui.main.home.tabthree;
 
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.TextView;
 
 import com.mk.locationtracker.R;
 import com.mk.locationtracker.ui.base.BaseFragment;
 
-import androidx.cardview.widget.CardView;
 import butterknife.BindView;
 
+/**
+ * The type Fragment two.
+ */
 public class FragmentTwo extends BaseFragment {
+    /**
+     * The Tv start location.
+     */
     @BindView(R.id.tvStartLocation)
     TextView tvStartLocation;
-    @BindView(R.id.tvStartLocationTitle)
-    TextView tvStartLocationTitle;
-    @BindView(R.id.cardViewStartLocation)
-    CardView cardViewStartLocation;
+    /**
+     * The Tv end location.
+     */
     @BindView(R.id.tvEndLocation)
     TextView tvEndLocation;
-    @BindView(R.id.tvEndLocationTitle)
-    TextView tvEndLocationTitle;
-    @BindView(R.id.catdViewEndLocation)
-    CardView catdViewEndLocation;
+    /**
+     * The Tv distance.
+     */
     @BindView(R.id.tvDistance)
     TextView tvDistance;
-    @BindView(R.id.tvDistanceTitle)
-    TextView tvDistanceTitle;
-    @BindView(R.id.cardViewDis)
-    CardView cardViewDis;
 
     @Override
     protected int setLayout() {
@@ -49,16 +49,32 @@ public class FragmentTwo extends BaseFragment {
 
     }
 
+    /**
+     * Update start location.
+     *
+     * @param startLocation the start location
+     */
     public void updateStartLocation(String startLocation) {
         tvStartLocation.setText(startLocation);
     }
 
+    /**
+     * Update end location.
+     *
+     * @param endLocation the end location
+     */
     public void updateEndLocation(String endLocation) {
         tvEndLocation.setText(endLocation);
     }
 
+    /**
+     * Update user distance.
+     *
+     * @param distance the distance
+     */
     public void updateUserDistance(double distance) {
-        tvDistance.setText(String.format("%.2f", distance) + " mtrs");
+        Resources res = getResources();
+        tvDistance.setText(String.format(res.getString(R.string.mtrs), String.format("%.2f", distance)));
     }
 
 }

@@ -7,7 +7,6 @@ import android.content.IntentSender;
 import android.location.Location;
 import android.os.Looper;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
@@ -32,6 +31,9 @@ import java.util.Date;
 
 import androidx.annotation.NonNull;
 
+/**
+ * The type Location manger.
+ */
 public class LocationManger {
 
     private Context context;
@@ -62,10 +64,22 @@ public class LocationManger {
     // boolean flag to toggle the ui
     private Boolean mRequestingLocationUpdates;
 
-    //store location points
+    /**
+     * The Points.
+     */
+//store location points
     public ArrayList<LatLng> points;
+    /**
+     * The Location update.
+     */
     public LocationUpdate locationUpdate;
 
+    /**
+     * Instantiates a new Location manger.
+     *
+     * @param context        the context
+     * @param locationUpdate the location update
+     */
     public LocationManger(Context context, LocationUpdate locationUpdate) {
         this.context = context;
         this.activity = (Activity) context;
@@ -117,9 +131,6 @@ public class LocationManger {
                     @Override
                     public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
                         Log.i(TAG, "All location settings are satisfied.");
-
-                        Toast.makeText(context, "Started location updates!", Toast.LENGTH_SHORT).show();
-
                         //noinspection MissingPermission
                         mFusedLocationClient.requestLocationUpdates(mLocationRequest,
                                 mLocationCallback, Looper.myLooper());
@@ -148,8 +159,6 @@ public class LocationManger {
                                 String errorMessage = "Location settings are inadequate, and cannot be " +
                                         "fixed here. Fix in Settings.";
                                 Log.e(TAG, errorMessage);
-
-                                Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show();
                         }
 
                         updateLocationUI();
@@ -157,14 +166,19 @@ public class LocationManger {
                 });
     }
 
+    /**
+     * Stop location update.
+     */
     public void stopLocationUpdate() {
         // Removing location updates
+        if (mFusedLocationClient == null && mLocationCallback == null) {
+            return;
+        }
         mFusedLocationClient
                 .removeLocationUpdates(mLocationCallback)
                 .addOnCompleteListener((Activity) context, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(context, "Location updates stopped!", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

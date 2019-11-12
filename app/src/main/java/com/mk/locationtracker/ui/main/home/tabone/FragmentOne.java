@@ -8,6 +8,9 @@ import com.mk.locationtracker.ui.base.BaseFragment;
 
 import butterknife.BindView;
 
+/**
+ * The type Fragment one.
+ */
 public class FragmentOne extends BaseFragment {
     @BindView(R.id.tvUserLocation)
     TextView tvUserLocation;
@@ -24,7 +27,7 @@ public class FragmentOne extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        tvUserLocation.setText("Please wait we are try to find your address");
+        tvUserLocation.setText(getString(R.string.please_wait_we_are_try_to_find_your_address));
     }
 
     @Override

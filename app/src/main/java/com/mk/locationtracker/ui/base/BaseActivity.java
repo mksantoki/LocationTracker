@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * The type Base activity.
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
