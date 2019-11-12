@@ -18,16 +18,16 @@ Thank you
 
 ## Application Images
 
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png)
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573600272.png)
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601093.png)
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601906.png)
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png width="200" height="400")
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573600272.png width="200" height="400")
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601093.png width="200" height="400")
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601906.png width="200" height="400")
 
 ## Code coverage report 
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/codeReport.PNG)
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/codeReport.PNG width="400" height="400")
 
 ## JaveDoc
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/javadoc.png)
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/javadoc.png width="400" height="400")
 
 ## Video 
 [![Download the video](https://i.imgur.com/vKb2F1B.png)](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/device-2019-11-13-045623.webm)
