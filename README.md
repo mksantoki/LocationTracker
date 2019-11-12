@@ -30,7 +30,7 @@ Thank you
 ![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/javadoc.png)
 
 ## Video 
-[![Download the video](https://i.imgur.com/vKb2F1B.png)](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/device-2019-11-13-045623.webm)
+[![Download the video](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/video.PNG)](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/device-2019-11-13-045623.webm)
 
 ## Download APK 
 
