@@ -18,7 +18,7 @@ Thank you
 
 ## Application Images
 
-![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png width="200" height="400")
+![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png =200*400)
 ![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573600272.png width="200" height="400")
 ![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601093.png width="200" height="400")
 ![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601906.png width="200" height="400")
