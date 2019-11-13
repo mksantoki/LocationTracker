@@ -11,7 +11,7 @@ I also write one test case for DateUtilTest class and trying to write test case 
 
 I also create a JavaDoc file for fast code review for other peoples and code coverage reports. For now, the code coverage report is showing 0% because not write more test cases. 
 
-If you like any implement in this assigment. Please just inform me. I will update it and again send it for review.
+If you like any implement in this assignment. Please just inform me. I will update it and again send it for review.
 
 Thank you 
 
