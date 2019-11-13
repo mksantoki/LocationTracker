@@ -17,11 +17,13 @@ Thank you
 
 
 ## Application Images
-<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png width="200" height="400"/>
-<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png width="200" height="400"/>
-<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573600272.png width="200" height="400"/>
-<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601093.png width="200" height="400"/>
-<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601906.png width="200" height="400"/>
+ 
+
+<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
+<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573591344.png" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
+<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573600272.png" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
+<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601093.png" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
+<img src="https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/Screenshot_1573601906.png" alt="" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400"/>
 
 ## Code coverage report 
 ![alt text](https://github.com/mksantoki/LocationTracker/blob/master/images_and_video/codeReport.PNG )
